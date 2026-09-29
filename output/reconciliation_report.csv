@@ -1,0 +1,28 @@
+check_id,check_name,scope,expected,observed,variance,result,note
+REC-01,ROW_COUNT,table,143.0,143.0,0.0,PASS,143 source = 140 target + 3 logged rejects
+REC-02,KEY_UNIQUE,source.Country_name,143.0,143.0,0.0,PASS,business key must be unique in the source
+REC-02,KEY_UNIQUE,target.Country_name,140.0,140.0,0.0,PASS,business key must be unique in the target
+REC-03,KEY_COMPLETENESS,target -> source,0.0,0.0,0.0,PASS,target keys with no matching source record
+REC-04,NO_SILENT_DROP,source -> target,0.0,0.0,0.0,PASS,source records absent from the target and absent from the log
+REC-05,CONTROL_TOTAL,Ladder_score,774.325,774.325,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,GDP_factor,193.033,193.033,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,Social_support,158.806,158.806,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,Health_factor,72.924,72.924,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,Freedom_factor,86.887,86.887,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,Generosity,20.478,20.478,0.0,PASS,sum over retained records must tie
+REC-05,CONTROL_TOTAL,Corruption_factor,21.577,21.577,0.0,PASS,sum over retained records must tie
+REC-06,COLUMN_COMPLETENESS,Ladder_score,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,GDP_factor,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,Social_support,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,Health_factor,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,Freedom_factor,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,Generosity,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-06,COLUMN_COMPLETENESS,Corruption_factor,0.0,0.0,0.0,PASS,the target must carry no nulls in a control column
+REC-07,ROUND_TRIP,row count,140.0,140.0,0.0,PASS,rows read back from the target
+REC-07,ROUND_TRIP,Ladder_score,774.325,774.325,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,GDP_factor,193.033,193.033,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,Social_support,158.806,158.806,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,Health_factor,72.924,72.924,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,Freedom_factor,86.887,86.887,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,Generosity,20.478,20.478,0.0,PASS,value written must equal value read back
+REC-07,ROUND_TRIP,Corruption_factor,21.577,21.577,0.0,PASS,value written must equal value read back
